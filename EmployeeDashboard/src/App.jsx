@@ -9,31 +9,34 @@ import { useDispatch } from 'react-redux'
 import { getEmployeeData } from './store/features/employee.slice'
 import { Toaster } from 'react-hot-toast';
 
-function App() {
 
+
+function App() {
   const dispatch = useDispatch()
 
-  useEffect( ()=>{
-     dispatch(getEmployeeData())
-  } , [])
+  useEffect(() => {
+    dispatch(getEmployeeData())
+  }, [])
 
 
   return (
     <>
-      <Toaster position='top-right' />
-    <div className='flex flex-col h-screen'>
 
-      <EmployeePopup/>
-      <DeletePopup/>
-      <Header />
-      <div className='flex-1 py-4'>
-        <Employees/>
+      <Toaster position='top-right' />
+
+
+      <div className='flex flex-col h-screen'>
+        <EmployeePopup />
+        <DeletePopup />
+        <Header />
+        <div className='flex-1 py-4'>
+          <Employees />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
     </>
 
-      
+
   )
 }
 

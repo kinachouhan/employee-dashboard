@@ -89,7 +89,7 @@ export const updateEmployeeData = createAsyncThunk(
             dispatch(closeEmployeePopup());
             dispatch(getEmployeeData())
 
-            return result.data; // ✅ updated employee
+            return result.data; 
         } catch (error) {
             return rejectWithValue(error.message);
         }
